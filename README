@@ -1,0 +1,34 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2781
+
+repo here: http://github.com/mjbrownie/django_helper.vim/tree/master
+
+#note. This is only tested on linux with python support. in my ~/.bashrc I have the following line which allows django modules to be imported 
+
+export DJANGO_SETTINGS_MODULE=settings
+
+Resolve a url to a tag 
+
+Usage
+
+for a given django url path
+
+urlpatterns(
+ '/some/url/path', 'some.django.view.function_name'
+)
+
+:DUrlTag /some/relative/path/
+
+will resolve the path to the function and then call
+:tag function_name
+
+You need to have an up to date tags file and the command might choke on
+complicated views with lots of decorators etc.
+
+
+:DClient /some/relative/path/
+
+will dump the html in a scratch window split
+
+if settings.py is in the root  of the path this script will :set path+= all template directories including INSTALLED_APPS, 
+
+so you can 'gf' to template files
